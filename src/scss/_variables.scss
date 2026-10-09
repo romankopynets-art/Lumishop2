@@ -1,0 +1,16 @@
+$color-accent: #D9A441;
+$color-dark: #222529;
+$color-footer: #1e222b;
+$color-text-light: #6c757d;
+$color-bg-light: #f8f9fa;
+$font-main: 'Poppins', Arial, sans-serif;
+$container-max-width: 71.25rem; 
+$border-radius-sm: 0.5rem;      
+$border-radius-md: 0.75rem;    
+$border-radius-lg: 1rem;      
+
+@mixin mobile {
+  @media (max-width: 48rem) {
+    @content;
+  }
+}

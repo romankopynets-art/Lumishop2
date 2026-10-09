@@ -1,0 +1,98 @@
+@use "variables" as v;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 2.25rem 0;
+  background: transparent;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: v.$container-max-width;
+    margin: 0 auto;
+    padding: 0 5rem; 
+
+    @include v.mobile {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      width: 100%;
+      padding: 0 1.5rem;
+    }
+  }
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+}
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 3rem;
+
+    a {
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 500;
+      opacity: 0.9;
+
+      &:hover {
+        opacity: 1;
+        color: v.$color-accent;
+      }
+    }
+
+    @include v.mobile {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 1rem !important;
+    }
+  }
+
+  @include v.mobile {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1e2129;
+    padding: 1.25rem 1rem;
+    box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.4);
+    z-index: 100;
+
+    &.active {
+      display: block !important;
+    }
+  }
+}
+
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+
+  span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+  }
+
+  @include v.mobile {
+    display: flex;
+  }
+}
